@@ -8,6 +8,4 @@ function [FRF_mag, FRF_phase] = eval_circuit(top_mat, prop_mat, output_element)
 %             FRF_phase - list of frequency vs FRF phase (in dB)
 
 
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
 end
