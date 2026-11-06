@@ -26,7 +26,7 @@ for i_index=1:1:length(frequency_vector)
 
     % assemble the y matrix in the form: I = Y * V
 
-    [Y_matrix]=Y_matrix_assemble(number_of_nodes,global_nodes,prop_mat,omega_frequency)
+    [Y_matrix]=Y_matrix_assemble(number_of_nodes,global_nodes,prop_mat,omega_frequency);
 
     if det(Y_matrix) == 0
         fprintf('ERROR ERROR ERROR: The Y matrix is singular. Invalid candiatate. \n')
