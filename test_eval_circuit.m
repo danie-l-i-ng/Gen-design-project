@@ -13,6 +13,6 @@ prop_matrix = [R 0 0;
                0 C 0;
                0 0 L];
 
-frequency_vector=logspace(-1, 8, freq_step);   % 0.1 Hz to 100 MHz
+frequency_vector=logspace(-1, 8, 1000);   % 0.1 Hz to 100 MHz
 
 [FRF_mag, FRF_phase] = eval_circuit(adj_matrix,prop_matrix, 1,frequency_vector);
