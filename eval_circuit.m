@@ -7,5 +7,15 @@ function [FRF_mag, FRF_phase] = eval_circuit(top_mat, prop_mat, output_element)
 %   OUTPUTS: FRF_mag - list of frequency vs FRF magnitude (in dB)
 %             FRF_phase - list of frequency vs FRF phase (in dB)
 
+% create association between elements and global nodes
+global_nodes = get_global_nodes(top_mat);
+
+
+
+
+
+FRF_mag = 0;
+FRF_phase = 0;
+
 
 end
