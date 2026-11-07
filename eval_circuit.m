@@ -26,12 +26,12 @@ for i_index=1:1:length(frequency_vector)
 
     % assemble the y matrix in the form: I = Y * V
 
-    [Y_matrix]=Y_matrix_assemble(number_of_nodes,global_nodes,prop_mat,omega_frequency);
+    [Y_matrix]=Y_matrix_assemble(global_nodes,prop_mat,omega_frequency);
 
-    if det(Y_matrix) == 0
-        fprintf('ERROR ERROR ERROR: The Y matrix is singular. Invalid candiatate. \n')
-        return
-    end
+    % if det(Y_matrix) == 0
+    %     fprintf('ERROR ERROR ERROR: The Y matrix is singular. Invalid candiatate. \n')
+    %     return
+    % end
 
     % invert the y matrix to find the z matrix in the form: V = Z * I
 
@@ -40,14 +40,14 @@ for i_index=1:1:length(frequency_vector)
     % extract the element specific transfer function (voltage across the
     % element) divided the global node
 
-    coords1=[];
-    coords2=[];
+    coords1=global_nodes(2*output_element-1);
+    coords2=global_nodes(2*output_element);
 
-    TF_pointwise=(Z_matrix(coords1)-Z_matrix(coords2))/(coords2);
+    TF_pointwise=(Z_matrix(coords1)-Z_matrix(coords2))/Z_matrix(coords2);
 
     % calculate the FRF's properties
 
-    mag(i_index,1)=bs(TF_pointwise);
+    mag(i_index,1)=abs(TF_pointwise);
     phase(i_index,1)=angle(TF_pointwise)*(180/pi); % convert to degrees   
 
 end
