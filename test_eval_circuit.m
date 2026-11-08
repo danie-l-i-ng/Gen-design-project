@@ -14,29 +14,29 @@ v_IN=1;
 frequency_vector=logspace(-1, 8, 1000);
 
 % Standard RCL circuit
-% adj_matrix = [0 0 1 0 0;
-%               0 0 0 0 1;
-%               1 0 0 1 0;
-%               0 0 1 0 1;
-%               0 1 0 1 0];
+adj_matrix = [0 0 1 0 0;
+              0 0 0 0 1;
+              1 0 0 1 0;
+              0 0 1 0 1;
+              0 1 0 1 0];
 
-% prop_matrix = [R 0 0;
-%                0 C 0;
-%                0 0 L];
+prop_matrix = [R 0 0;
+               0 C 0;
+               0 0 L];
 
 % RCL Circuit with 2 Resistors in Parallel
 
-adj_matrix = [0 0 0 0 0 1;
-              0 0 1 0 0 0;
-              0 1 0 1 1 0;
-              0 0 1 0 1 1;
-              0 0 1 1 0 1;
-              1 0 0 1 1 0];
-
-prop_matrix = [0 C 0;
-    R 0 0;
-    R 0 0;
-    0 0 L];
+% adj_matrix = [0 0 0 0 0 1;
+%               0 0 1 0 0 0;
+%               0 1 0 1 1 0;
+%               0 0 1 0 1 1;
+%               0 0 1 1 0 1;
+%               1 0 0 1 1 0];
+% 
+% prop_matrix = [0 C 0;
+%     R 0 0;
+%     R 0 0;
+%     0 0 L];
 
 % RCL Circuit with resistor, capacitor, and inductor in parallel
 
