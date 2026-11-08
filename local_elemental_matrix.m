@@ -1,7 +1,10 @@
 function [ke] = local_elemental_matrix(local_property,s_parm)
-%   local_elemental_matrix: 
-%   INPUTS: 
-%   OUTPUTS: 
+%   local_elemental_matrix: this finds the local elemental matrix at a
+%   given frequency and elemental property (resistor, capacitor, or
+%   inductor)
+%   INPUTS: local_property - specifies the type of elemental property
+%           s_parm - specifics the frequency content
+%   OUTPUTS: ke - local elemental matrix
 
 idx=find(local_property~=0);
 

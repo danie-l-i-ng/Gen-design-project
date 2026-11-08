@@ -34,10 +34,10 @@ for i_index=1:1:length(frequency_vector)
 
     [Y_matrix]=Y_matrix_assemble(global_nodes,prop_mat,omega_frequency);
 
-    % if det(Y_matrix) == 0
-    %     fprintf('ERROR ERROR ERROR: The Y matrix is singular. Invalid candiatate. \n')
-    %     return
-    % end
+    if det(Y_matrix) == 0
+        fprintf('ERROR ERROR ERROR: The Y matrix is singular. Invalid candiatate. \n')
+        return
+    end
 
     % invert the y matrix to find the z matrix in the form: V = Z * I
 
