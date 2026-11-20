@@ -56,11 +56,11 @@ for i_index=1:1:length(frequency_vector)
     % calculate the FRF's properties
 
     mag(i_index,1)=abs(TF_pointwise);
-    phase(i_index,1)=angle(TF_pointwise)*(180/pi); % convert to degrees   
+    phase(i_index,1)=angle(TF_pointwise); % radians
 
 end
 
 FRF_mag=mag;
-FRF_phase=phase;
+FRF_phase=rad2deg(unwrap(phase)); % rads to degrees
 
 end
